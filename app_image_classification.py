@@ -1,7 +1,6 @@
 import streamlit as st
 import tensorflow as tf
 import pandas as pd
-import cv2
 from PIL import Image, ImageOps
 import numpy as np
 import efficientnet.keras as efn
