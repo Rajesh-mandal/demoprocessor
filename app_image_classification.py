@@ -10,7 +10,7 @@ import efficientnet.keras as efn
 
 #Load deep learning model 
 def load_model():
-  model=tf.keras.models.load_model(r'./processoreffB2.h5')
+  model=tf.keras.models.load_model('/tmp/8db3f9aeb1df87a/processoreffB2.h5')
   return model
 with st.spinner('Model is being loaded..'):
   model=load_model()
