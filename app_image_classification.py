@@ -13,10 +13,10 @@ import efficientnet.keras as efn
 # def load_model1():
 #   model=load_model('processoreffB2.h5')
 #   return model
-# with st.spinner('Model is being loaded..'):
-#   model=load_model1()
+with st.spinner('Model is being loaded..'):
+  model=load_model('processoreffB2.h5')
   
-model=load_model('processoreffB2.h5')
+# model=load_model('processoreffB2.h5')
 
 #Frontend texts
 st.markdown("<h1 style='text-align: center;'> Processor Defect classification</h1>", unsafe_allow_html=True)
