@@ -1,28 +1,12 @@
 import streamlit as st
-#import tensorflow as tf
-from keras.models import load_model
 import pandas as pd
 from PIL import Image, ImageOps
 import numpy as np
+import os
+import tensorflow as tf
+from tensorflow.keras.models import load_model
 import efficientnet.keras as efn
 
-#Allow cache in the application for prediction 
-# @st.cache(allow_output_mutation=True)
-
-#Load deep learning model 
-# def load_model1():
-#   model=load_model('processoreffB2.h5')
-#   return model
-
-import os
-
-model_path = os.path.join(os.path.dirname(__file__), 'processoreffB2.h5')
-model=load_model(model_path)
-
-# with st.spinner('Model is being loaded..'):
-#   model=load_model('processoreffB2.h5')
-  
-# model=load_model('processoreffB2.h5')
 
 #Frontend texts
 st.markdown("<h1 style='text-align: center;'> Processor Defect classification</h1>", unsafe_allow_html=True)
@@ -49,11 +33,18 @@ def upload_predict(upload_image, model):
     print("preds: ", preds)
     return preds
 
+#Load deep learning model 
+@st.cache(allow_output_mutation=True)
+def load_model1():
+  model_path = os.path.join(os.path.dirname(__file__), 'processoreffB2.h5')
+  model = load_model(model_path)
+  return model
 
 if __name__ == '__main__':
   if file is None:
       st.text("Please upload an image file")
   else:
+      model = load_model1()
       #Loop through the List, "files", to classify every image uploaded
       for img_upload in (file):
           st.markdown("<h1 style='text-align: center;'>Here is the image you selected</h1>", unsafe_allow_html=True)
