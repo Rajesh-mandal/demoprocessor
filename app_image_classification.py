@@ -1,5 +1,6 @@
 import streamlit as st
-import tensorflow as tf
+#import tensorflow as tf
+from keras.models import load_model
 import pandas as pd
 from PIL import Image, ImageOps
 import numpy as np
@@ -10,7 +11,7 @@ import efficientnet.keras as efn
 
 #Load deep learning model 
 def load_model():
-  model=tf.keras.models.load_model(r'/tmp/8db3f9aeb1df87a/processoreffB2.h5')
+  model=load_model('processoreffB2.h5')
   return model
 with st.spinner('Model is being loaded..'):
   model=load_model()
