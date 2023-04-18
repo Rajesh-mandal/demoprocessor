@@ -7,7 +7,7 @@ import numpy as np
 import efficientnet.keras as efn
 
 #Allow cache in the application for prediction 
-@st.cache(allow_output_mutation=True)
+# @st.cache(allow_output_mutation=True)
 
 #Load deep learning model 
 # def load_model1():
