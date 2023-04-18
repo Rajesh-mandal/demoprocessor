@@ -10,11 +10,11 @@ import efficientnet.keras as efn
 @st.cache(allow_output_mutation=True)
 
 #Load deep learning model 
-def load_model():
+def load_model1():
   model=load_model('processoreffB2.h5')
   return model
 with st.spinner('Model is being loaded..'):
-  model=load_model()
+  model=load_model1()
 
 #Frontend texts
 st.markdown("<h1 style='text-align: center;'> Processor Defect classification</h1>", unsafe_allow_html=True)
